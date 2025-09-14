@@ -224,5 +224,6 @@ flutter run
 
 | Add User | Home | Message Info | Typing Indicator |
 |----------|------|--------------|------------------|
-| ![Add User](assets/images/add_user.jpg) | ![Home](assets/images/home.jpg) | ![Message Info](assets/images/Message_info.jpg) | ![Typing Indicator](assets/images/Typing_indicator.jpg) |
+| ![Add User](assets/images/add_user.jpg) | ![Home](assets/images/home.jpg) | ![Message Info](assets/images/Message_Info.jpg) | ![Typing Indicator](assets/images/Typing_indicator.jpg) |
+
 
