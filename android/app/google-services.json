@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "194187244928",
+    "project_id": "chatapp-5d997",
+    "storage_bucket": "chatapp-5d997.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:194187244928:android:b4605e8694f78f12017d65",
+        "android_client_info": {
+          "package_name": "com.transbuzz.chatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "194187244928-ogl7flgd5tnso21c9a42tb5afhvjvd0o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.transbuzz.chatapp",
+            "certificate_hash": "a25de78c0a4c7e0b45a0d11b7b3a3967d5846bb6"
+          }
+        },
+        {
+          "client_id": "194187244928-q6b7q069vqmt0s6hhtdusgniiravneig.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsS2j6NEEgbivk9R7t6mVFLyEP9Ad7gtQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "194187244928-q6b7q069vqmt0s6hhtdusgniiravneig.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
