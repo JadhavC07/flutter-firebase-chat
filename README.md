@@ -176,6 +176,20 @@ service cloud.firestore {
   }
 }
 ```
+### 6. Firestore Indexes
+
+Some queries require composite indexes. Set them up in **Firebase Console → Firestore → Indexes**.
+
+#### Required Indexes:
+
+1. **Chats collection**
+   - Fields: `users` (array), `lastMessageTime` (descending)
+
+2. **Messages collection (Index 1)**
+   - Fields: `status` (ascending), `senderId` (ascending)
+
+3. **Messages collection (Index 2)**
+   - Fields: `senderId` (ascending), `createdAt` (descending)
 
 ---
 
