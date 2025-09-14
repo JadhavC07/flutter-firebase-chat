@@ -26,35 +26,45 @@ A real-time chat application built with **Flutter** and **Firebase** supporting:
 
 ### 2. Add Android App to Firebase
 1. Register your app with the package name:
-
-
+   ```
+   com.transbuzz.chatapp
+   ```
 2. Add your **SHA-1** fingerprint:
-```bash
-keytool -list -v -alias androiddebugkey -keystore ~/.android/debug.keystore -storepass android -keypass android
+   ```bash
+   keytool -list -v -alias androiddebugkey -keystore ~/.android/debug.keystore -storepass android -keypass android
+   ```
+   Copy the `SHA1` and add it in  
+   **Firebase Console → Project Settings → Android App → Add fingerprint**.
 
-Copy the SHA1 and add it in
-Firebase Console → Project Settings → Android App → Add fingerprint.
+3. Download the `google-services.json` and place it inside:
+   ```
+   android/app/
+   ```
 
-Download the google-services.json and place it inside:
-android/app/
-Generate firebase_options.dart
+---
 
+### 3. Generate `firebase_options.dart`
 Run the following to generate Firebase config:
-
+```bash
 flutter pub add firebase_core
 flutter pub add firebase_auth
 flutter pub add cloud_firestore
 flutter pub add firebase_analytics
 flutter pub add google_sign_in
 flutterfire configure
-
+```
 
 This will create:
-
+```
 lib/firebase_options.dart
+```
 
-4. Android Gradle Setup
-android/build.gradle.kts
+---
+
+### 4. Android Gradle Setup
+
+#### `android/build.gradle.kts`
+```kotlin
 buildscript {
     repositories {
         google()
@@ -71,8 +81,10 @@ allprojects {
         mavenCentral()
     }
 }
+```
 
-android/app/build.gradle.kts
+#### `android/app/build.gradle.kts`
+```kotlin
 plugins {
     id("com.android.application")
     id("kotlin-android")
@@ -107,8 +119,10 @@ dependencies {
     implementation("com.google.android.gms:play-services-auth:20.7.0")
     implementation("androidx.multidex:multidex:2.0.1")
 }
+```
 
-android/app/proguard-rules.pro
+#### `android/app/proguard-rules.pro`
+```proguard
 # Flutter
 -keep class io.flutter.** { *; }
 
@@ -119,8 +133,12 @@ android/app/proguard-rules.pro
 # Google Play Services
 -keep class com.google.android.gms.** { *; }
 -dontwarn com.google.android.gms.**
+```
 
-5. Firestore Security Rules
+---
+
+### 5. Firestore Security Rules
+```js
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
@@ -157,30 +175,30 @@ service cloud.firestore {
     }
   }
 }
+```
 
-🚀 Run the App
+---
+
+## 🚀 Run the App
+```bash
 flutter clean
 flutter pub get
 flutter run
+```
 
-📌 Notes
+---
 
-Do NOT commit google-services.json or API keys to GitHub.
+## 📌 Notes
+- Do **NOT** commit `google-services.json` or API keys to GitHub.
+- Ensure Firestore **indexes** are created (Firebase Console → Firestore → Indexes).
+- Firebase Authentication should have **Google Sign-In enabled**.
 
-Ensure Firestore indexes are created (Firebase Console → Firestore → Indexes).
+---
 
-Firebase Authentication should have Google Sign-In enabled.
-
-📷 Features
-
-✅ Google Sign-In authentication
-
-✅ Search users by email
-
-✅ Add to chat list
-
-✅ Send, delete, update messages
-
-✅ Delivery/read receipts with timestamps
-
-✅ Typing indicators
+## 📷 Features
+- ✅ Google Sign-In authentication  
+- ✅ Search users by email  
+- ✅ Add to chat list  
+- ✅ Send, delete, update messages  
+- ✅ Delivery/read receipts with timestamps  
+- ✅ Typing indicators  
